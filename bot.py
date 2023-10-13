@@ -10,7 +10,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, InlineQue
 from codeforces import Codeforces
 from codeforces.models import *
 
-api_id = 1851270 
+api_id = 123 
 api_hash = "hash"
 bot_token = "token"
 
