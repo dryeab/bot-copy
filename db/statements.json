@@ -1,0 +1,16 @@
+{
+    "CREATE_STANDINGS_TABLE": "CREATE TABLE Standings (contest INTEGER, rank INTEGER, student TEXT, solved INTEGER, FOREIGN KEY(contest) REFERENCES Contest(gym_id))",
+    "GET_STANDINGS": "SELECT * FROM Standings WHERE contest={contest}",
+    "ADD_STANDING": "INSERT INTO Standings VALUES ({contest}, {rank}, '{student}', {solved})",
+
+    "CREATE_PROBLEMS_TABLE": "CREATE TABLE Problems (contest INTEGER, problem TEXT, FOREIGN KEY(contest) REFERENCES Contest(gym_id))",
+    "GET_PROBLEMS": "SELECT * FROM Problems WHERE contest={contest}",
+    "ADD_PROBLEM": "INSERT INTO Problems VALUES ({contest}, '{problem}')",
+
+    "CREATE_STATUS_TABLE": "CREATE TABLE Status (contest INTEGER, link INTEGER, time DATETIME, student TEXT, problem TEXT, lang TEXT, verdict TEXT, FOREIGN KEY(contest) REFERENCES Contest(gym_id))",
+    "GET_STATUS": "SELECT * FROM Status WHERE contest={contest} ORDER BY time ASC",
+    "ADD_STATUS": "INSERT INTO Status VALUES ({contest}, {link}, '{time}', '{student}', '{problem}', '{lang}', '{verdict}')",
+
+    "DROP_TABLE": "DROP TABLE IF EXISTS {table}"
+}
+
